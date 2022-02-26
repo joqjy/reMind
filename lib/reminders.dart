@@ -105,28 +105,40 @@ class _RemindersPageState extends State<RemindersPage> {
                                     labelText: 'Description'),
                               ),
                               const SizedBox(
-                                height: 20,
+                                height: 5,
                               ),
                               TextField(
                                 controller: _timeController,
                                 decoration: const InputDecoration(
                                     labelText: 'Alarm Time'),
                               ),
-                              ElevatedButton(
-                                  child: Text('Create Reminder'),
-                                  onPressed: () {
-                                    // ignore: unused_local_variable
-                                    final String? name = _nameController.text;
-                                    final String? time = _timeController.text;
-                                    //create new widget with the input name
-                                    addDynamic(_nameController.text,_timeController.text);
-                                    // Clear the text fields
-                                    _nameController.text = '';
-                                    _timeController.text = '';
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                    style:ElevatedButton.styleFrom(
+                                      primary:Colors.amber,
+                                    ),
+                                    child: Text(
+                                      'Create Reminder',
+                                      textAlign: TextAlign.center,
+                                      style:TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () {
+                                      // ignore: unused_local_variable
+                                      final String? name = _nameController.text;
+                                      final String? time = _timeController.text;
+                                      //create new widget with the input name
+                                      addDynamic(_nameController.text,_timeController.text);
+                                      // Clear the text fields
+                                      _nameController.text = '';
+                                      _timeController.text = '';
 
-                                    // Hide the bottom sheet
-                                    Navigator.of(context).pop();
-                                  })
+                                      // Hide the bottom sheet
+                                      Navigator.of(context).pop();
+                                    })
+                                ),
                             ],
                           ),
                         );
