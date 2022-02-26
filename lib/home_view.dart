@@ -17,64 +17,72 @@ class Homeview extends StatelessWidget {
       "phone": "+65 9812 8129",
       "email": "joey2001@gmail.com",
       "region": "Woodlands",
-      "country": "Singapore"
-      "image" :
+      "country": "Singapore",
+      "image": "assets/beach.jpg",
     },
     {
       "name": "Sarah Mei (Daughter)",
       "phone": "+65 8762 3762",
       "email": "meimei@gmail.com",
       "region": "Jurong East",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/Daughter.png"
     },
     {
       "name": "Ruimin Huang (Niece)",
       "phone": "+65 9372 8789",
       "email": "ruimin@gmail.com",
       "region": "Lakeside",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/blue.png"
     },
     {
       "name": "Charlene Chia (Cousin)",
       "phone": "+65 8399 1647",
       "email": "chiacharlene@gmail.com",
       "region": "Ang Moh kio",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/flowers.jpg"
     },
     {
       "name": "Dr Larry Loke GP",
       "phone": "+65 6777 7677",
       "email": "loke_larry@med.ntu.edu.sg",
       "region": "NTU",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/hiking.jpg",
     },
     {
       "name": "Dr Lim Yuen Xin ENT",
       "phone": "+65 6887 1279",
       "email": "lim_yuenxin@med.ntu.edu.sg",
       "region": "NTU",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/doctor.png",
     },
     {
       "name": "Varsha (Neighbour)",
       "phone": "+65 8723 8299",
       "email": "varsha1234@gmail.com",
       "region": "Clementi",
-      "country": "Singapore"
+      "country": "Singapore",
+      "image": "assets/blue.png"
     },
     {
       "name": "Yuri Kim",
       "phone": "+82 8382 0912 928",
       "email": "kimyuri@live.com",
       "region": "Seoul",
-      "country": "South Korea"
+      "country": "South Korea",
+      "image": "assets/seoul.png"
     },
     {
       "name": "Mei Mei (Sister)",
       "phone": "+86 123 329 293 129",
       "email": "ac@google.net",
       "region": "Beijing",
-      "country": "China"
+      "country": "China",
+      "image": "assets/blue.png"
     },
     {
       "name": "John (SIL)",
@@ -141,7 +149,7 @@ class Homeview extends StatelessWidget {
                         return ContactDetailsView(contact: Contact(country: 'Singapore', email: 'meimei@gmail.com',
                             name: 'Sarah Mei (Daughter)',
                             phone: '+65 8762 3762',
-                            region: 'Jurong East'));
+                            region: 'Jurong East', image: 'assets/Daughter.png'));
                       }));
                     },
                     leading: const CircleAvatar(
@@ -197,7 +205,7 @@ class Homeview extends StatelessWidget {
                       },
                       leading: const CircleAvatar(
                         radius: 25,
-                        backgroundImage: AssetImage('assets/person1.JPG'),
+                        backgroundImage: AssetImage('assets/blue.png'),
                       ),
                       title: Text(
                         '${element['name']}',
