@@ -5,17 +5,31 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
+import 'package:photo_card_swiper/models/photo_card.dart';
+import 'package:photo_card_swiper/photo_card_swiper.dart';
 
 
 class PhotoAlbum extends StatefulWidget {
-  const PhotoAlbum({Key? key}) : super(key: key);
+  //const PhotoAlbum({Key? key}) : super(key: key);
 
-
+  List<PhotoCard> _photos = [];
   @override
   _PhotoAlbumState createState() => _PhotoAlbumState();
 }
 
 class _PhotoAlbumState extends State<PhotoAlbum> {
+
+  List<PhotoCard> _photos = [];
+  void addPhoto1() async {
+    PhotoCard newPhoto = PhotoCard(
+        title: 'Ah gong and Steve',
+        description: 'My Husband and Grandson',
+        imagePath: 'assets/Husband&Grandson.png',
+        cardId: '1');
+    _photos.add(newPhoto);
+  }
 
   File? image;
 
@@ -25,13 +39,25 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
      if (image==null) return;
 
      String path = image.path;
-     final imageTemporary = File(path);
-     setState(() => this.image = imageTemporary);
+     //final imageTemporary = File(path);
+     final imagePerm = await saveImagePermanently(path);
+     setState(() => this.image = imagePerm);
    } on PlatformException catch (e) {
      print("Failed to select image: $e");
    }
   }
-/*
+
+  Future<File> saveImagePermanently(String path) async {
+    final directory = await getApplicationDocumentsDirectory();
+    final name = basename(path);
+    final image = File('${directory.path}/$name');
+
+    return File(path).copy(path);
+  }
+
+  /*
+  var imgList = List<ListItem>;
+
   final CarouselSlider autoPlayDemo = CarouselSlider( options: CarouselOptions(viewportFraction: 0.9, aspectRatio: 2.0, autoPlay: false, enlargeCenterPage: true),
     items: imgList.map(
           (child) {
@@ -70,6 +96,8 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
     ).toList(),
   );
 */
+
+
   ValueNotifier<bool> isDialOpen = ValueNotifier(false);
 
   @override
@@ -103,10 +131,44 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
         child: Text('Photo Album', style: TextStyle(fontSize: 24)),
       ),*/
       body: Container(
-        padding: EdgeInsets.all(32),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              DiscoverAppBarWidget(),
+              Expanded(
+                child: Stack(
+                  children: [
+                    NoMoreDataWidget(),
+                    PhotoCardSwiper(
+                      photos: widget._photos,
+                      //cardSwiped: _cardSwiped,
+                      showLoading: true,
+                      hideCenterButton: false,
+                      hideTitleText: false,
+                      hideDescriptionText: false,
+                      imageScaleType: BoxFit.cover,
+                      imageBackgroundColor: Colors.grey,
+                      leftButtonIcon: Icons.remove_circle_outline,
+                      rightButtonIcon: Icons.check,
+                      centerButtonIcon: Icons.edit,
+                      leftButtonBackgroundColor: Colors.red[100],
+                      leftButtonIconColor: Colors.red[600],
+                      centerButtonBackgroundColor: Colors.lightBlue[50],
+                      centerButtonIconColor: Colors.lightBlue[600],
+                      rightButtonBackgroundColor: Colors.lightGreen[100],
+                      rightButtonIconColor: Colors.lightGreen[700],
+                      leftButtonAction: _leftButtonClicked,
+                      centerButtonAction: _centerButtonClicked,
+                      rightButtonAction: _rightButtonClicked,
+                      onCardTap: _onCardTap,
+                    ),
+                ],
 
-        )
+                )
+              ),
+              SizedBox(height: 20.0,)
+          ],
+        ),
       ),
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
@@ -125,6 +187,9 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               onTap: () {
                 print('Gallery selected');
                 pickImage(ImageSource.gallery);
+
+
+
               }
           ),
           SpeedDialChild(
@@ -134,9 +199,84 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               onTap: () {
                 print('Camera selected');
                 pickImage(ImageSource.camera);
+                addPhoto1();
               }
           ),
         ],
+      ),
+    );
+  }
+}
+
+//Callbacks from  SwipeCardsLayoutWidget
+void _onCardTap(int _index) {
+  print('Card with index $_index is Tapped.');
+  //Here you can navigate to detail screen or so.
+}
+
+void _leftButtonClicked() {
+  print('Left button clicked');
+}
+
+void _centerButtonClicked() {
+  print('Center button clicked');
+}
+
+void _rightButtonClicked() {
+  print('Right button clicked');
+}
+
+//Secondary Widgets
+class NoMoreDataWidget extends StatelessWidget {
+  const NoMoreDataWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        height: 150,
+        child: Column(
+          children: [
+            Icon(
+              Icons.error,
+              size: 60.0,
+              color: Colors.grey,
+            ),
+            Text(
+              'No more data found.',
+              style: TextStyle(
+                fontSize: 17.0,
+                color: Colors.grey[400],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DiscoverAppBarWidget extends StatelessWidget {
+  const DiscoverAppBarWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        top: 60.0,
+        left: 20.0,
+        bottom: 10.0,
+      ),
+      child: Text(
+        'My Family',
+        style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 32.0,
+            color: Colors.grey[850]),
       ),
     );
   }
