@@ -1,8 +1,17 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
-void profile() {
-  runApp(MaterialApp(
-    home: Scaffold(
+class Profile extends StatefulWidget {
+  Profile({Key? key}) : super(key: key);
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(title: const Text("Personal Details")),
           body: Center(
           child: Column(
@@ -45,8 +54,7 @@ void profile() {
             ],
           ),
         ),
-      ),
-      ),
-  );
-}
+      );
+    }
+  }
 
