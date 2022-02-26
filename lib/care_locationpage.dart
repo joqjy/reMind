@@ -3,25 +3,28 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:reMind/carerHomeUI.dart';
+import 'package:reMind/homePage.dart';
 //import 'package:googlemaps/location_service.dart';
 
-void main() => runApp(MyApp());
+class CarerLocation extends StatefulWidget {
+  CarerLocation({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Google Maps Demo',
-      home: MapSample(),
-    );
-  }
-}
-class MapSample extends StatefulWidget {
-  @override
-  State<MapSample> createState() => MapSampleState();
+  State<CarerLocation> createState() => MapSampleState();
 }
 
-class MapSampleState extends State<MapSample> {
+// class MapSample extends State<CarerHomePage> {
+//   State<MapSample> createState() => MapSampleState();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     throw UnimplementedError();
+//   }
+// }
+
+class MapSampleState extends State<CarerLocation> {
   Completer<GoogleMapController> _controller = Completer();
   TextEditingController _searchController = TextEditingController();
 
@@ -79,7 +82,38 @@ class MapSampleState extends State<MapSample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Google Maps')),
+      appBar: 
+        AppBar(
+          leadingWidth: 100,
+          leading: Builder(
+            builder: (BuildContext context) {
+              return TextButton(
+                child:Text(
+                  "< Edit",
+                  style:TextStyle(
+                    color:Colors.black,
+                    fontSize: 18,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CarerHomePage(),
+                    ),
+                  );
+                }
+              );
+            }
+          ),  
+          centerTitle: true,
+          title: Text(
+            'Google Maps',
+            style:TextStyle(
+              fontSize: 20,
+            )
+          ),
+        ),
       body: Column(
         children:[
           //   Row(children: [

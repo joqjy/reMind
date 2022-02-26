@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:reMind/callingCarer.dart';
+import 'package:reMind/care_locationpage.dart';
 import 'package:reMind/home_view.dart';
 import 'package:reMind/location_page.dart';
 import 'package:reMind/lostAlert.dart';
@@ -10,14 +11,14 @@ import 'package:reMind/profile.dart';
 import 'package:reMind/reminderAlerts.dart';
 import 'package:reMind/reminders.dart';
 
-class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+class CarerHomePage extends StatefulWidget {
+  CarerHomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<CarerHomePage> createState() => _CarerHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _CarerHomePageState extends State<CarerHomePage> {
   // TextEditingController _answerController = TextEditingController();
 
   // createAlertDialog(BuildContext context) {
@@ -141,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         onPressed: () {
                           Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MapSample()));
+                        MaterialPageRoute(builder: (context) => CarerLocation()));
                         },
                       ),
                       SizedBox(height:5),
