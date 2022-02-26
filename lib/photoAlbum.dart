@@ -12,25 +12,42 @@ import 'package:photo_card_swiper/photo_card_swiper.dart';
 
 
 class PhotoAlbum extends StatefulWidget {
-  //const PhotoAlbum({Key? key}) : super(key: key);
+  PhotoAlbum({Key? key}) : super(key: key);
 
-  List<PhotoCard> _photos = [];
+  List<PhotoCard> _photos = [
+    PhotoCard(
+      title: 'Ah gong and Steve',
+      description: 'My Husband and Grandson',
+      imagePath: 'assets/Husband&Grandson.png',
+      cardId: '1'),
+    PhotoCard(
+      title: 'My Sarah',
+      description: 'My Daughter',
+      imagePath: 'assets/Daughter.png',
+      cardId: '2'),
+    PhotoCard(
+        title: 'Sarahs Husband, John',
+        description: 'My Son-in-Law',
+        imagePath: 'assets/SIL.jpg',
+        cardId: '3')];
+
+
   @override
   _PhotoAlbumState createState() => _PhotoAlbumState();
 }
 
 class _PhotoAlbumState extends State<PhotoAlbum> {
 
-  List<PhotoCard> _photos = [];
+  /*
   void addPhoto1() async {
-    PhotoCard newPhoto = PhotoCard(
-        title: 'Ah gong and Steve',
-        description: 'My Husband and Grandson',
-        imagePath: 'assets/Husband&Grandson.png',
-        cardId: '1');
-    _photos.add(newPhoto);
+    PhotoCard newPhoto1 = PhotoCard(
+    title: 'Sarahs Husband, John',
+    description: 'My Son-in-Law',
+    imagePath: 'assets/SIL.jgp',
+    cardId: '3');
+    _photos.add(newPhoto1);
   }
-
+ */
   File? image;
 
   Future pickImage(ImageSource source) async {
@@ -142,15 +159,15 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                     PhotoCardSwiper(
                       photos: widget._photos,
                       //cardSwiped: _cardSwiped,
-                      showLoading: true,
+                      showLoading: false,
                       hideCenterButton: false,
                       hideTitleText: false,
                       hideDescriptionText: false,
                       imageScaleType: BoxFit.cover,
                       imageBackgroundColor: Colors.grey,
                       leftButtonIcon: Icons.remove_circle_outline,
-                      rightButtonIcon: Icons.check,
-                      centerButtonIcon: Icons.edit,
+                      rightButtonIcon: Icons.edit,
+                      centerButtonIcon: Icons.favorite,
                       leftButtonBackgroundColor: Colors.red[100],
                       leftButtonIconColor: Colors.red[600],
                       centerButtonBackgroundColor: Colors.lightBlue[50],
@@ -161,6 +178,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                       centerButtonAction: _centerButtonClicked,
                       rightButtonAction: _rightButtonClicked,
                       onCardTap: _onCardTap,
+                      loop: true;
                     ),
                 ],
 
@@ -199,7 +217,9 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               onTap: () {
                 print('Camera selected');
                 pickImage(ImageSource.camera);
-                addPhoto1();
+
+                setState(() {});
+
               }
           ),
         ],
