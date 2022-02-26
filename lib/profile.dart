@@ -18,16 +18,24 @@ class _ProfileState extends State<Profile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-            radius: 100.0,
+            radius: 150.0,
+            backgroundColor: Colors.white,
             child: ClipRRect(
-              child: Image.asset('assets/Old-Lady-Circle.png'),
+              child: Image.asset('assets/AhMei.png'),
               borderRadius: BorderRadius.circular(50.0),
               ),),
               ListTile(
                 leading: Icon(Icons.account_circle_outlined),
-                title: Text("Name: Ah mei",
+                title: Text("Name: Ah Mei",
                 style: TextStyle(
                   fontSize: 20, fontWeight: FontWeight.bold,),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Caretaker's Name: Sarah Mei",
+                  style: TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.bold,),
                 ),
               ),
               ListTile(
@@ -39,7 +47,7 @@ class _ProfileState extends State<Profile> {
               ),
               ListTile(
                 leading: Icon(Icons.location_pin),
-                title: Text("Address: Block 347 Ang Mo Kio Ave 3, Singapore 560347",
+                title: Text("Address: #02-100, Block 347 Ang Mo Kio Ave 3, Singapore 560347",
                   style: TextStyle(
                     fontSize: 20, fontWeight: FontWeight.bold,),
                 ),
