@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:reMind/location_service.dart';
 //import 'package:googlemaps/location_service.dart';
 
 void main() => runApp(MyApp());
@@ -118,13 +119,29 @@ class MapSampleState extends State<MapSample> {
             _controller.complete(controller);
           },
         ),
-      )],
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: _goToTheLake,
-      //   label: Text('To the lake!'),
-      //   icon: Icon(Icons.directions_boat),
-     // ),
-    ),);
+      ),
+      Container(
+          width: MediaQuery.of(context).size.width/1.3,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(35.0),
+            color: Colors.amber,
+          ),
+          child: MaterialButton(
+            onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => HomePage(title: '_MyHomePageState'),
+              //   ),
+              // );
+            },
+            child: Text('I am Lost'),
+          )
+      )
+          ],
+    ),
+    );
   }
 
   Future<void> _goToTheLake() async {
