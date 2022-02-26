@@ -18,12 +18,12 @@ class _HomePageState extends State<HomePage> {
         child:Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children:<Widget>[
-            SizedBox(height:50),
+            SizedBox(height:30),
             ElevatedButton(
               style:ElevatedButton.styleFrom(
                 primary: Colors.red,
                 shape: CircleBorder(),
-                padding: EdgeInsets.all(40),
+                padding: EdgeInsets.all(35),
               ),
               child: Text(
                 "SOS",
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed:(){}, //goes to call
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:<Widget>[
@@ -216,6 +216,7 @@ class _HomePageState extends State<HomePage> {
         )
 
       ),
+      
     );
   }
 }
