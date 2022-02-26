@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     Stream<int> every30seconds =
-        Stream<int>.periodic(Duration(seconds: 30), (t) => t);
+        Stream<int>.periodic(Duration(minutes: 5), (t) => t);
 
     every30seconds.listen((t) {
       showDialog(
@@ -186,12 +186,12 @@ class _HomePageState extends State<HomePage> {
                                   width: 2,
                                   color: Color.fromARGB(255, 187, 187, 187),
                                 )),
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.all(25),
                           ),
                           child: Image.asset(
                             'assets/phonebook.png',
-                            width: 100,
-                            height: 100,
+                            width: 90,
+                            height: 90,
                           ),
                           onPressed: () {},
                         ),
