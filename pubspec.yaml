@@ -80,7 +80,7 @@ flutter:
     - assets/Husband&Grandson.png
     - assets/Old-Lady-Circle.png
     - assets/SIL.jpg
-    - assets/Daughter.jpg
+    - assets/Daughter.png
     - assets/person1.JPG
     - assets/person2.JPG
     - assets/person3.JPG
@@ -90,6 +90,7 @@ flutter:
     - assets/telegram.png
     - assets/whatsapp.png
     - assets/avatar.JPG
+    - assets/AhMei.png
 
 
   # To add assets to your application, add an assets section, like this:
