@@ -68,12 +68,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: _questionController,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 15,
+                  fontSize: 22,
                 ),
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   hintText: "Username",
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 15),
+                  hintStyle: TextStyle(color: Colors.black, fontSize: 18),
                   border: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 50, right: 50),
+              padding: EdgeInsets.only(left: 50, right: 50, top:5),
               child: TextFormField(
                 controller: _answerController,
                 // ignore: prefer_const_constructors
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Password",
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 15),
+                  hintStyle: TextStyle(color: Colors.black, fontSize: 18),
                   border: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.black),
                   ),
@@ -126,7 +126,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Image.asset('assets/patient_icon.png'),
                       ),
                     ),
-                    Text("I am a Patient"),
+                    Text(
+                      "I am a Patient",
+                      style:TextStyle(fontSize: 18),
+                    ),
                   ]),
               SizedBox(
                 width: 30,
@@ -142,7 +145,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Image.asset('assets/caretaker_icon.png'),
                       ),
                     ),
-                    Text("I am a Caretaker"),
+                    Text(
+                      "I am a Caretaker",
+                      style:TextStyle(fontSize: 18),
+                    ),
                   ]),
             ]),
 
