@@ -1,39 +1,55 @@
+// ignore_for_file: prefer_const_constructors, use_function_type_syntax_for_parameters, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class lostAlert extends StatelessWidget {
-  // final String title;
-  // final String content;
-  // final List<Widget> actions;
-
-  // MyAlertDialog({
-  //   this.title = "Reminder!",
-  //   this.content = "Eat Medicine",
-  //   this.actions = const [],
-  // });
-  //DateTime now = DateTime.now();
+class LostAlert extends StatelessWidget {
   String formattedDate = DateFormat().add_jm().format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
-        "SOS CALL!",
-        style: TextStyle(fontSize:20)
-        //style: Theme.of(context).textTheme.title,
-      ),
+      insetPadding: EdgeInsets.fromLTRB(10,30,10,30),
+      title: 
+        Center(
+          child:Text(
+            "AH MEI IS LOST!",
+            style: TextStyle(
+              fontSize: 28,
+              color: Colors.red,
+            ),
+          ),
+        ),
       actions: <Widget>[
-        MaterialButton(
-          elevation: 5.0,
-          child: Text('OK'),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
+        Center(
+          child:ElevatedButton(
+            style:ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 113, 219, 116)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'CALL',
+                    style: TextStyle(fontSize:20),
+                ),
+                Container(
+                  child: Icon(Icons.phone),
+                )
+              ]
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
         )
       ],
-      content: Text(
-        "Eat Medicine!",
-        style: TextStyle(fontSize: 30),
-      ),
+      content:
+        Text(
+          "Ah Mei is currently lost at Bishan Ang Mo Kio Park.",
+          style: TextStyle(
+            fontSize: 25,
+          ),
+        ),
     );
   }
 }

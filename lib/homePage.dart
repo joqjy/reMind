@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:reMind/location_page.dart';
+import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
 import 'package:reMind/reminderAlerts.dart';
 
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     Stream<int> every30seconds =
-        Stream<int>.periodic(Duration(minutes: 5), (t) => t);
+        Stream<int>.periodic(Duration(seconds: 30), (t) => t);
 
     every30seconds.listen((t) {
       showDialog(
