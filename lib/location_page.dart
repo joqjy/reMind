@@ -106,27 +106,7 @@ class MapSampleState extends State<MapSample> {
             _controller.complete(controller);
           },
         ),
-      ),
-      Container(
-          width: MediaQuery.of(context).size.width/1.3,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(35.0),
-            color: Colors.amber,
-          ),
-          child: MaterialButton(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => HomePage(title: '_MyHomePageState'),
-              //   ),
-              // );
-            },
-            child: Text('I am Lost'),
-          )
-      )
-          ],
+      ),],
     ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
