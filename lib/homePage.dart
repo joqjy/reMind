@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:reMind/home_view.dart';
 import 'package:reMind/location_page.dart';
 import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
@@ -198,7 +199,10 @@ class _HomePageState extends State<HomePage> {
                             width: 90,
                             height: 90,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Homeview()));
+                          },
                         ),
                         Text(
                           "Phone Book",
