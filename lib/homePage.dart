@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:reMind/home_view.dart';
 import 'package:reMind/location_page.dart';
 import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
@@ -38,8 +39,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     Stream<int> every30seconds =
-        Stream<int>.periodic(Duration(seconds: 5), (t) => t);
-
+        Stream<int>.periodic(Duration(seconds: 360), (t) => t);
     every30seconds.listen((t) {
       showDialog(
         context: context,
@@ -203,7 +203,10 @@ class _HomePageState extends State<HomePage> {
                             width: 90,
                             height: 90,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Homeview()));
+                          },
                         ),
                         SizedBox(height:5),
                         Text(

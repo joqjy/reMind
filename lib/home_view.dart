@@ -13,74 +13,76 @@ class Homeview extends StatelessWidget {
   final List<Map<String,String>>data =
   [
     {
-      "name": "Zahir Ballard",
-      "phone": "1-531-990-0526",
-      "email": "ornare.libero@hotmail.com",
-      "region": "Valle d'Aosta",
-      "country": "India"
+      "name": "Joey Quah (Sister)",
+      "phone": "+65 9812 8129",
+      "email": "joey2001@gmail.com",
+      "region": "Woodlands",
+      "country": "Singapore"
+      "image" :
     },
     {
-      "name": "Yeo Merrill",
-      "phone": "1-332-774-4832",
-      "email": "lectus.pede@hotmail.ca",
-      "region": "Warwickshire",
-      "country": "United States"
+      "name": "Sarah Mei (Daughter)",
+      "phone": "+65 8762 3762",
+      "email": "meimei@gmail.com",
+      "region": "Jurong East",
+      "country": "Singapore"
     },
     {
-      "name": "Jeanette Collier",
-      "phone": "(322) 372-8789",
-      "email": "lacus.ut@protonmail.net",
-      "region": "Samsun",
-      "country": "Germany"
+      "name": "Ruimin Huang (Niece)",
+      "phone": "+65 9372 8789",
+      "email": "ruimin@gmail.com",
+      "region": "Lakeside",
+      "country": "Singapore"
     },
     {
-      "name": "Abraham Carrillo",
-      "phone": "(877) 399-1647",
-      "email": "urna.nec@icloud.ca",
-      "region": "Ivanovo Oblast",
+      "name": "Charlene Chia (Cousin)",
+      "phone": "+65 8399 1647",
+      "email": "chiacharlene@gmail.com",
+      "region": "Ang Moh kio",
+      "country": "Singapore"
+    },
+    {
+      "name": "Dr Larry Loke GP",
+      "phone": "+65 6777 7677",
+      "email": "loke_larry@med.ntu.edu.sg",
+      "region": "NTU",
+      "country": "Singapore"
+    },
+    {
+      "name": "Dr Lim Yuen Xin ENT",
+      "phone": "+65 6887 1279",
+      "email": "lim_yuenxin@med.ntu.edu.sg",
+      "region": "NTU",
+      "country": "Singapore"
+    },
+    {
+      "name": "Varsha (Neighbour)",
+      "phone": "+65 8723 8299",
+      "email": "varsha1234@gmail.com",
+      "region": "Clementi",
+      "country": "Singapore"
+    },
+    {
+      "name": "Yuri Kim",
+      "phone": "+82 8382 0912 928",
+      "email": "kimyuri@live.com",
+      "region": "Seoul",
+      "country": "South Korea"
+    },
+    {
+      "name": "Mei Mei (Sister)",
+      "phone": "+86 123 329 293 129",
+      "email": "ac@google.net",
+      "region": "Beijing",
       "country": "China"
     },
     {
-      "name": "Kiona Lowery",
-      "phone": "1-275-555-4573",
-      "email": "magna.duis@icloud.net",
-      "region": "Ankara",
-      "country": "Pakistan"
-    },
-    {
-      "name": "Thaddeus Curry",
-      "phone": "(944) 256-2684",
-      "email": "massa.mauris.vestibulum@outlook.org",
-      "region": "Henegouwen",
-      "country": "Colombia"
-    },
-    {
-      "name": "Lucian Perry",
-      "phone": "1-263-978-3556",
-      "email": "vitae@aol.com",
-      "region": "Tasmania",
-      "country": "Brazil"
-    },
-    {
-      "name": "Yuri Gaines",
-      "phone": "1-220-445-1914",
-      "email": "vitae.diam.proin@outlook.edu",
-      "region": "Maine",
-      "country": "Peru"
-    },
-    {
-      "name": "Ronan Farmer",
-      "phone": "(477) 560-7527",
-      "email": "ac@google.net",
-      "region": "Galicia",
-      "country": "Canada"
-    },
-    {
-      "name": "Tad Potts",
-      "phone": "1-881-467-8342",
+      "name": "John (SIL)",
+      "phone": "+86 129 837 348 238",
       "email": "sem@hotmail.edu",
-      "region": "Maranhão",
-      "country": "Mexico"
+      "region": "Beijing",
+      "country": "China",
+      "image" : "assets/Husband&Grandson"
     }
   ];
 
@@ -97,7 +99,7 @@ class Homeview extends StatelessWidget {
             padding: EdgeInsets.only(right: 10),
             child: Center(
               child: CircleAvatar(radius: 25,
-                backgroundImage: AssetImage('assets/avatar.jpg'),),
+                backgroundImage: AssetImage('assets/AhMei.png'),),
             ),
           )
         ],
@@ -125,7 +127,7 @@ class Homeview extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Recent',
+              child: Text('Your Main Caretaker(s)',
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
               ),
             ),
@@ -136,21 +138,21 @@ class Homeview extends StatelessWidget {
                   return  ListTile(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return ContactDetailsView(contact: Contact(country: 'Ghana', email: 'naanaa@gmail.com',
-                            name: 'Karren Quarcoo',
-                            phone: '+233 24 60 66 431',
-                            region: 'Greater Accra'));
+                        return ContactDetailsView(contact: Contact(country: 'Singapore', email: 'meimei@gmail.com',
+                            name: 'Sarah Mei (Daughter)',
+                            phone: '+65 8762 3762',
+                            region: 'Jurong East'));
                       }));
                     },
                     leading: const CircleAvatar(
                       radius: 25,
-                      backgroundImage: AssetImage('assets/person1.jpg'),
+                      backgroundImage: AssetImage('assets/Daughter.png'),
                     ),
                     title: const Text(
-                      'Karren Quarcoo',
+                      'Sarah Mei (Daughter)',
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                     ),
-                    subtitle: const Text('+233 27 37 79 125'),
+                    subtitle: const Text('+65 8762 3762'),
                     trailing: const IconButton(onPressed: null, icon: Icon(Icons.more_horiz)),
                   );
                 },
@@ -160,7 +162,7 @@ class Homeview extends StatelessWidget {
                     thickness: 2,
                   );
                 },
-                itemCount: 3),
+                itemCount: 1),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text('Contacts',
@@ -195,7 +197,7 @@ class Homeview extends StatelessWidget {
                       },
                       leading: const CircleAvatar(
                         radius: 25,
-                        backgroundImage: AssetImage('assets/person1.jpg'),
+                        backgroundImage: AssetImage('assets/person1.JPG'),
                       ),
                       title: Text(
                         '${element['name']}',
