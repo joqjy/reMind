@@ -23,7 +23,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
         ]
       ),
       body: const Center(
-        child: Text( 'This is the home page', style: TextStyle(fontSize: 24),
+        child: Text( 'Photo Album', style: TextStyle(fontSize: 24),
     ),
     ),
     );
