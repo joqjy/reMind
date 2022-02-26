@@ -44,6 +44,7 @@ dependencies:
   path_provider: ^2.0.1
   photo_card_swiper: ^0.0.6
   grouped_list:
+  stacked_card_carousel: ^0.0.3-nullsafety.1
 
 
 dev_dependencies:
@@ -92,6 +93,9 @@ flutter:
     - assets/hiking.png
     - assets/seoul.png
     - assets/waves.jpg
+    - assets/kids.jpg
+    - assets/family.jpg
+    - assets/devs.png
 
 
   # To add assets to your application, add an assets section, like this:

@@ -1,10 +1,9 @@
-//import 'dart:html';
+import 'splash_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:universal_io/io.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'package:photo_card_swiper/models/photo_card.dart';
@@ -13,7 +12,7 @@ import 'package:photo_card_swiper/photo_card_swiper.dart';
 
 class PhotoAlbum extends StatefulWidget {
   PhotoAlbum({Key? key}) : super(key: key);
-
+/*
   List<PhotoCard> _photos = [
     PhotoCard(
       title: 'Ah gong and Steve',
@@ -31,23 +30,13 @@ class PhotoAlbum extends StatefulWidget {
         imagePath: 'assets/SIL.jpg',
         cardId: '3')];
 
-
+*/
   @override
   _PhotoAlbumState createState() => _PhotoAlbumState();
 }
 
 class _PhotoAlbumState extends State<PhotoAlbum> {
 
-  /*
-  void addPhoto1() async {
-    PhotoCard newPhoto1 = PhotoCard(
-    title: 'Sarahs Husband, John',
-    description: 'My Son-in-Law',
-    imagePath: 'assets/SIL.jgp',
-    cardId: '3');
-    _photos.add(newPhoto1);
-  }
- */
   File? image;
 
   Future pickImage(ImageSource source) async {
@@ -71,49 +60,6 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
 
     return File(path).copy(path);
   }
-
-  /*
-  var imgList = List<ListItem>;
-
-  final CarouselSlider autoPlayDemo = CarouselSlider( options: CarouselOptions(viewportFraction: 0.9, aspectRatio: 2.0, autoPlay: false, enlargeCenterPage: true),
-    items: imgList.map(
-          (child) {
-        return Container(
-          margin: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(5.0)),
-                child: image != null ? Image.file(image!,
-                  fit: BoxFit.cover,
-                  width: 500.0,) : Image.asset(AppBackground.png,
-                  fit: BoxFit.cover,
-                  width: 500.0,
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  child: Text(
-                    'Text',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    ).toList(),
-  );
-*/
-
 
   ValueNotifier<bool> isDialOpen = ValueNotifier(false);
 
@@ -144,10 +90,8 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
             )
           ]
       ),
-      /*body: const Center(
-        child: Text('Photo Album', style: TextStyle(fontSize: 24)),
-      ),*/
-      body: Container(
+      body: Splash(),
+      /*body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -187,7 +131,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               SizedBox(height: 20.0,)
           ],
         ),
-      ),
+      ),*/
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
         openCloseDial: isDialOpen,
@@ -223,80 +167,6 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               }
           ),
         ],
-      ),
-    );
-  }
-}
-
-//Callbacks from  SwipeCardsLayoutWidget
-void _onCardTap(int _index) {
-  print('Card with index $_index is Tapped.');
-  //Here you can navigate to detail screen or so.
-}
-
-void _leftButtonClicked() {
-  print('Left button clicked');
-}
-
-void _centerButtonClicked() {
-  print('Center button clicked');
-}
-
-void _rightButtonClicked() {
-  print('Right button clicked');
-}
-
-//Secondary Widgets
-class NoMoreDataWidget extends StatelessWidget {
-  const NoMoreDataWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 150,
-        child: Column(
-          children: [
-            Icon(
-              Icons.error,
-              size: 60.0,
-              color: Colors.grey,
-            ),
-            Text(
-              'No more data found.',
-              style: TextStyle(
-                fontSize: 17.0,
-                color: Colors.grey[400],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class DiscoverAppBarWidget extends StatelessWidget {
-  const DiscoverAppBarWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 60.0,
-        left: 20.0,
-        bottom: 10.0,
-      ),
-      child: Text(
-        'My Family',
-        style: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 32.0,
-            color: Colors.grey[850]),
       ),
     );
   }
