@@ -62,8 +62,10 @@ class _HomePageState extends State<HomePage> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Colors.red,
-                shape: CircleBorder(),
-                padding: EdgeInsets.all(35),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(75.0),
+                ),
+                padding: EdgeInsets.fromLTRB(35,16,35,16),
               ),
               child: Text(
                 "SOS",
@@ -75,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed: () {}, //goes to call
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 18),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -89,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(32.0),
                               side: BorderSide(
                                 width: 2,
-                                color: Color.fromARGB(255, 187, 187, 187),
+                                color: Colors.transparent,
                               )),
                           padding: EdgeInsets.all(20),
                         ),
@@ -100,11 +102,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                         onPressed: () {},
                       ),
+                      SizedBox(height:5),
                       Text(
                         "Profile",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
@@ -120,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(32.0),
                               side: BorderSide(
                                 width: 2,
-                                color: Color.fromARGB(255, 187, 187, 187),
+                                color: Colors.transparent,
                               )),
                           padding: EdgeInsets.all(20),
                         ),
@@ -134,11 +137,12 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) => MapSample()));
                         },
                       ),
+                      SizedBox(height:5),
                       Text(
                         "Location",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
@@ -159,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(32.0),
                               side: BorderSide(
                                 width: 2,
-                                color: Color.fromARGB(255, 187, 187, 187),
+                                color: Colors.transparent,
                               )),
                           padding: EdgeInsets.all(25),
                         ),
@@ -170,11 +174,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                         onPressed: () {},
                       ),
+                      SizedBox(height:5),
                       Text(
                         "Reminders",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 18,
                           color: Colors.black,
                         ),
                       ),
@@ -185,12 +190,12 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 255, 255, 255),
+                            primary: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(32.0),
                                 side: BorderSide(
-                                  width: 2,
-                                  color: Color.fromARGB(255, 187, 187, 187),
+                                  width: 0,
+                                  color:Colors.transparent,
                                 )),
                             padding: EdgeInsets.all(25),
                           ),
@@ -204,11 +209,12 @@ class _HomePageState extends State<HomePage> {
                                 MaterialPageRoute(builder: (context) => Homeview()));
                           },
                         ),
+                        SizedBox(height:5),
                         Text(
                           "Phone Book",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 18,
                             color: Colors.black,
                           ),
                         ),
@@ -220,12 +226,12 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 255, 255, 255),
+                    primary: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(32.0),
                         side: BorderSide(
-                          width: 2,
-                          color: Color.fromARGB(255, 187, 187, 187),
+                          width: 0,
+                          color: Colors.transparent,
                         )),
                     padding: EdgeInsets.only(
                         top: 20, bottom: 15, left: 20, right: 20),
@@ -240,11 +246,12 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (context) => PhotoAlbum()));
                   },
                 ),
+                SizedBox(height:5),
                 Text(
                   "Photo Album",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                    fontSize: 18,
                     color: Colors.black,
                   ),
                 ),
