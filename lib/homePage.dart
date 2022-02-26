@@ -40,7 +40,6 @@ class _HomePageState extends State<HomePage> {
 
     Stream<int> every30seconds =
         Stream<int>.periodic(Duration(seconds: 360), (t) => t);
-
     every30seconds.listen((t) {
       showDialog(
         context: context,
