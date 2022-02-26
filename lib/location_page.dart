@@ -108,18 +108,42 @@ class MapSampleState extends State<MapSample> {
         ),
       ),],
     ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.of(context).pop();
-          Text('We have notified your caretaker. Please stay put.');
-
-        },
-        label: Text('I am Lost!'),
-        icon: Icon(Icons.help_outline),
-      ),
+        floatingActionButton:check?lost():found()
+    );
+  }
+  bool check=true;
+  @override
+  Widget lost(){
+    return FloatingActionButton.extended(
+      onPressed:(){
+        setState(() {
+          //Also add logic to play
+          check=!check;
+        });
+      },
+      backgroundColor: Colors.amber,
+      foregroundColor: Colors.black,
+      extendedTextStyle: TextStyle(height:1.2,fontSize: 25),
+      label:Text('I am Lost!'),
+      icon: Icon(Icons.help_outline),
     );
   }
 
+  Widget found(){
+    return FloatingActionButton.extended(
+      onPressed:(){
+        setState(() {
+          //Also add logic to play
+          check=!check;
+        });
+      },
+      backgroundColor: Colors.amber,
+      foregroundColor: Colors.black,
+      extendedTextStyle: TextStyle(height:1.2,fontSize: 20),
+      label: Text('We have notified your caretaker. \n Please stay put.'),
+      icon: Icon(Icons.sentiment_very_satisfied),
+    );
+  }
   Future<void> _goToTheLake() async {
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
