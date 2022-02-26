@@ -23,13 +23,13 @@ class _HomePageState extends State<HomePage> {
               style:ElevatedButton.styleFrom(
                 primary: Colors.red,
                 shape: CircleBorder(),
-                padding: EdgeInsets.all(30),
+                padding: EdgeInsets.all(40),
               ),
               child: Text(
                 "SOS",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 30,
                   color: Colors.white,
                 ),
               ),
@@ -61,7 +61,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {},
                     ),
-                    Text("Profile"),
+                    Text(
+                      "Profile",
+                      style:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
                   ],
                 ),
                 Column(
@@ -86,12 +93,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {},
                     ),
-                    Text("Location"),
+                    Text(
+                      "Location",
+                      style:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
                   ],
                 ),
               ]
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:<Widget>[
@@ -108,17 +122,22 @@ class _HomePageState extends State<HomePage> {
                             color: Color.fromARGB(255, 187, 187, 187),
                           )
                         ),
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(25),
                       ),
                       child: Image.asset(
                         'assets/reminders.png',
-                        width:100,
-                        height:100,
+                        width:90,
+                        height:90,
                       ),
                       onPressed: () {},
                     ),
                     Text(
-                      "Reminders"
+                      "Reminders",
+                      style:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
                     ),
                   ],
                 ),
@@ -145,14 +164,21 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                       },
                     ),
-                    Text("Phone Book"),
+                    Text(
+                      "Phone Book",
+                      style:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
                   ]
                 ),
               ]
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children:<Widget>[
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -164,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                         color: Color.fromARGB(255, 187, 187, 187),
                       )
                     ),
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.only(top:20,bottom:15,left:20,right:20),
                   ),
                   child: Image.asset(
                     'assets/photoalbum.png',
@@ -176,7 +202,14 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => PhotoAlbum()));
                   },
                 ),
-                Text("Photo Album"),
+                Text(
+                  "Photo Album",
+                  style:TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
+                ),
               ],
             ),
           ]
