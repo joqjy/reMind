@@ -110,12 +110,9 @@ class MapSampleState extends State<MapSample> {
     ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomePage(title: '_MyHomePageState'),
-          //   ),
-          // );
+          Navigator.of(context).pop();
+          Text('We have notified your caretaker. Please stay put.');
+
         },
         label: Text('I am Lost!'),
         icon: Icon(Icons.help_outline),
