@@ -100,14 +100,14 @@ class _RemindersPageState extends State<RemindersPage> {
                   )
               ),
             ),
-            IconButton(icon: Icon(Icons.add_circle_outline),
-              color: Colors.blue,
-              onPressed: (){},
-              iconSize: 60,
-            )
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add_circle_outline),
+        onPressed: (){},
+        backgroundColor: Colors.white60,
+      )
     );
   }
 }
