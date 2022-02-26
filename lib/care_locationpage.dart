@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:reMind/carerHomeUI.dart';
+import 'package:reMind/carerHomePage.dart';
 import 'package:reMind/homePage.dart';
 //import 'package:googlemaps/location_service.dart';
 
