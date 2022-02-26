@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:reMind/photoAlbum.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -147,7 +148,10 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.amber,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PhotoAlbum()));
+              },
             ),
           ]
         )
