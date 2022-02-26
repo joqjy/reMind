@@ -160,6 +160,8 @@ class MapSampleState extends State<CarerLocation> {
         label: Text('Go to patient\'s location!'),
         icon: Icon(Icons.person_pin_circle,size: 35),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+
     );
   }
 
