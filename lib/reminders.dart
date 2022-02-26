@@ -74,7 +74,35 @@ class _RemindersPageState extends State<RemindersPage> {
     return MaterialApp(
         home: Scaffold(
             body: Column(children: <Widget>[
-              Text('test'),
+              SizedBox(height:25),
+              Card(
+                color: const Color(0xaaffdddd),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                child: ListTile(
+                  leading: Icon(Icons.food_bank_outlined, size: 45,),
+                  title: Text("Remember to eat breakfast",
+                    style: TextStyle(
+                      fontSize: 20,),
+                  ),
+                  subtitle: Text(
+                    "9AM", style: TextStyle(fontSize: 15, color: Colors.black.withOpacity(0.6)),
+                  )
+                ),
+              ),
+              Card(
+                color: const Color(0xaac7ffe0),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                child: ListTile(
+                    leading: Icon(Icons.medication_outlined, size: 45,),
+                    title: Text("Remember to take meds",
+                      style: TextStyle(
+                        fontSize: 20,),
+                    ),
+                    subtitle: Text(
+                      "10AM", style: TextStyle(fontSize: 15, color: Colors.black.withOpacity(0.6)),
+                    )
+                ),
+              ),
               Flexible(
                 child: new ListView.builder(
                     itemCount: listDynamic.length,
