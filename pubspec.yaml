@@ -43,6 +43,7 @@ dependencies:
   universal_io: ^2.0.4
   path_provider: ^2.0.1
   photo_card_swiper: ^0.0.6
+  grouped_list:
 
 
 dev_dependencies:
@@ -78,6 +79,8 @@ flutter:
     - assets/AppBackground.png
     - assets/Husband&Grandson.png
     - assets/Old-Lady-Circle.png
+    - assets/SIL.jpg
+    - assets/Daughter.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
