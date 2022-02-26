@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:reMind/care_locationpage.dart';
 
 import 'homePage.dart';
 
@@ -141,7 +142,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 125,
                       height: 125,
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          if (_questionController.text != '' &&
+                              _answerController.text != '') {
+                            Navigator.push(context, 
+                              MaterialPageRoute(
+                                builder: (context) => CarerLocation()));
+                          }
+                        },
                         child: Image.asset('assets/caretaker_icon.png'),
                       ),
                     ),

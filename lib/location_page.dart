@@ -127,6 +127,8 @@ class MapSampleState extends State<MapSample> {
       label:Text('I am Lost!'),
       icon: Icon(Icons.help_outline),
     );
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat;
+
   }
 
   Widget found(){
