@@ -128,6 +128,18 @@ class MapSampleState extends State<MapSample> {
       )
           ],
     ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => HomePage(title: '_MyHomePageState'),
+          //   ),
+          // );
+        },
+        label: Text('I am Lost!'),
+        icon: Icon(Icons.help_outline),
+      ),
     );
   }
 
