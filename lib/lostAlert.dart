@@ -7,47 +7,62 @@ class LostAlert extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      insetPadding: EdgeInsets.fromLTRB(10,30,10,30),
-      title: 
-        Center(
-          child:Text(
-            "AH MEI IS LOST!",
-            style: TextStyle(
-              fontSize: 28,
-              color: Colors.red,
-            ),
-          ),
-        ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(35.0))),
+      titlePadding: EdgeInsets.only(top: 20),
       actions: <Widget>[
         Center(
-          child:ElevatedButton(
-            style:ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 113, 219, 116)),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary:Colors.green,
+              fixedSize: Size(200.0, 30.0),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'CALL',
-                    style: TextStyle(fontSize:20),
-                ),
-                Container(
-                  child: Icon(Icons.phone),
-                )
-              ]
-            ),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Call Ah Mei',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  Container(
+                    child: Icon(Icons.phone),
+                  )
+                ]),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
         )
       ],
+      title: 
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center, 
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center, 
+              children: <Widget>[
+                Icon(
+                  Icons.notifications_on_outlined,
+                  size: 75,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  "I'm Lost!!!",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]
+            ),
+            SizedBox(height:5),
+          ],
+        ),
       content:
         Text(
           "Ah Mei is currently lost at Bishan Ang Mo Kio Park.",
-          style: TextStyle(
-            fontSize: 25,
-          ),
+          style: TextStyle(fontSize: 25),
+          textAlign: TextAlign.center,
         ),
     );
   }
