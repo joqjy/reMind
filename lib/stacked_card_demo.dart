@@ -51,6 +51,7 @@ class _StackedCardDemoState extends State<StackedCardDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: BackButton(color: Colors.black),
         automaticallyImplyLeading: false,
         title: Text('My Photo Album'),
       ),
