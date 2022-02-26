@@ -28,7 +28,7 @@ class ContactDetailsView extends StatelessWidget{
           children: [
             const CircleAvatar(
               radius: 70,
-              backgroundImage: AssetImage('assets/avatar.jpg'),
+              backgroundImage: AssetImage('assets/Daughter.png'),
             ),
             const SizedBox(
               height: 25,),
@@ -40,7 +40,7 @@ class ContactDetailsView extends StatelessWidget{
                     '${contact.region}, ${contact.country}',style: const TextStyle(fontSize: 22,fontWeight: FontWeight.normal))),
             const SizedBox(height:30,),
             Container(
-              color: const Color(0xff9AADBE),
+              color: const Color(0xFFE6F6FF),
               child: Column(
                 children: [
                   ListTile(
@@ -87,9 +87,9 @@ class ContactDetailsView extends StatelessWidget{
                   ),
                   const  ListTile(
                     title: Text('Group', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),),
-                    subtitle: Text('Uni Friends',
+                    subtitle: Text('Family',
                       style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16,
-                          color: Color(0xff9AADBE)),),
+                          color: Colors.black),),
                   ),
                 ],
               ),
@@ -99,7 +99,7 @@ class ContactDetailsView extends StatelessWidget{
               child: Text('Account Linked',style: TextStyle(fontWeight: FontWeight.w600, fontSize:18),),
             ),
             Container(
-              color: const Color(0xff9AADBE),
+              color: const Color(0xFFE6F6FF),
               child: Column(
                 children: [
                   ListTile(
@@ -117,7 +117,7 @@ class ContactDetailsView extends StatelessWidget{
               child: Text('More Options',style: TextStyle(fontWeight: FontWeight.w600, fontSize:18),),
             ),
             Container(
-              color: const Color(0xff9AADBE),
+              color: const Color(0xFFE6F6FF),
               child: Column(
                 children: const [
                   ListTile(
