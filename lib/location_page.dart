@@ -21,7 +21,7 @@ class MapSampleState extends State<MapSample> {
 
   static final Marker _kGooglePlexMarker = Marker(
     markerId: MarkerId('_kGooglePlex'),
-    infoWindow: InfoWindow(title: 'Home', snippet: '347 Ang Mo Kio Ave 3, Singapore 560347'),
+    infoWindow: InfoWindow(title: 'Home', snippet: 'Block 347 Ang Mo Kio Ave 3, Singapore 560347'),
     icon: BitmapDescriptor.defaultMarker,
     position: LatLng(1.3673, 103.84858),
   );
@@ -106,36 +106,13 @@ class MapSampleState extends State<MapSample> {
             _controller.complete(controller);
           },
         ),
-      ),
-      Container(
-          width: MediaQuery.of(context).size.width/1.3,
-          height: 50,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(35.0),
-            color: Colors.amber,
-          ),
-          child: MaterialButton(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => HomePage(title: '_MyHomePageState'),
-              //   ),
-              // );
-            },
-            child: Text('I am Lost'),
-          )
-      )
-          ],
+      ),],
     ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomePage(title: '_MyHomePageState'),
-          //   ),
-          // );
+          Navigator.of(context).pop();
+          Text('We have notified your caretaker. Please stay put.');
+
         },
         label: Text('I am Lost!'),
         icon: Icon(Icons.help_outline),
