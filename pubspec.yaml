@@ -81,6 +81,16 @@ flutter:
     - assets/Old-Lady-Circle.png
     - assets/SIL.jpg
     - assets/Daughter.jpg
+    - assets/person1.JPG
+    - assets/person2.JPG
+    - assets/person3.JPG
+    - assets/person4.JPG
+    - assets/person5.JPG
+    - assets/person6.JPG
+    - assets/telegram.png
+    - assets/whatsapp.png
+    - assets/avatar.JPG
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
