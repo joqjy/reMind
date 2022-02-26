@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:reMind/callingCarer.dart';
-import 'package:reMind/care_locationpage.dart';
+import 'package:reMind/carerLocation.dart';
 import 'package:reMind/home_view.dart';
-import 'package:reMind/location_page.dart';
+import 'package:reMind/locationPage.dart';
 import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
 import 'package:reMind/profile.dart';
@@ -48,7 +48,7 @@ class _CarerHomePageState extends State<CarerHomePage> {
       showDialog(
         context: context,
         builder: (BuildContext dialogContext) {
-          return MyAlertDialog();
+          return LostAlert();
         },
       );
     });

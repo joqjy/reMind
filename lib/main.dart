@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:reMind/care_locationpage.dart';
+import 'package:reMind/carerLocation.dart';
 
 import 'homePage.dart';
 

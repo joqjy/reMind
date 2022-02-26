@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:reMind/callingCarer.dart';
 import 'package:reMind/home_view.dart';
-import 'package:reMind/location_page.dart';
+import 'package:reMind/locationPage.dart';
 import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
 import 'package:reMind/profile.dart';

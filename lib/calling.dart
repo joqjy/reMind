@@ -1,29 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:reMind/carerHomePage.dart';
 
-void main(){
-  runApp(MaterialApp(
-    home: Scaffold(
-      backgroundColor: Color(0xaa5a5a5a),
-      body: Center(
-        child: Column(
+class Calling extends StatefulWidget {
+  Calling({Key? key}) : super(key: key);
+
+  @override
+  State<Calling> createState() => _CallingState();
+}
+
+class _CallingState extends State<Calling> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xaa5a5a5a),
+        body: Center(
+            child: Column(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               // width: 350,
               // height: 90,
-              padding: EdgeInsets.only(left:0,top:60, bottom:0),
-              child: Text("Ah Mei", style: TextStyle(color: Colors.white, fontSize: 50),),
+              padding: EdgeInsets.only(left: 0, top: 60, bottom: 0),
+              child: Text(
+                "Ah Mei",
+                style: TextStyle(color: Colors.white, fontSize: 50),
+              ),
             ),
             Container(
-              padding:EdgeInsets.only(left: 5, right: 5, bottom: 50,top:0),
-              child: Text("calling...", style: TextStyle(color: Color(0xaa5a5a5a).withOpacity(0.9), fontSize: 30),),
+              padding: EdgeInsets.only(left: 5, right: 5, bottom: 50, top: 0),
+              child: Text(
+                "calling...",
+                style: TextStyle(
+                    color: Color(0xaa5a5a5a).withOpacity(0.9), fontSize: 30),
+              ),
             ),
             ButtonBar(
               alignment: MainAxisAlignment.center,
-              buttonPadding:EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 10
-              ),
+              buttonPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               children: [
                 Ink(
                   decoration: const ShapeDecoration(
@@ -32,7 +45,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.mic_off_rounded),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -44,7 +57,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.dialpad_rounded),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -56,7 +69,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.volume_up),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -65,10 +78,7 @@ void main(){
             ),
             ButtonBar(
               alignment: MainAxisAlignment.center,
-              buttonPadding:EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 10
-              ),
+              buttonPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               children: [
                 Ink(
                   decoration: const ShapeDecoration(
@@ -77,7 +87,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.add),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -89,7 +99,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.video_call),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -101,7 +111,7 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.account_circle_rounded),
-                    onPressed: (){},
+                    onPressed: () {},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -110,10 +120,7 @@ void main(){
             ),
             ButtonBar(
               alignment: MainAxisAlignment.center,
-              buttonPadding:EdgeInsets.symmetric(
-                  horizontal: 30,
-                  vertical: 10
-              ),
+              buttonPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
               children: [
                 Ink(
                   decoration: const ShapeDecoration(
@@ -122,7 +129,8 @@ void main(){
                   ),
                   child: IconButton(
                     icon: Icon(Icons.call_end),
-                    onPressed: (){},
+                    onPressed: () {Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => CarerHomePage()));},
                     color: Colors.white,
                     iconSize: 70,
                   ),
@@ -130,8 +138,7 @@ void main(){
               ],
             )
           ],
-        )
-      )
-    )
-  ));
+        ))
+    );
+  }
 }
