@@ -1,6 +1,6 @@
-import 'dart:html';
+//import 'dart:html';
 import 'package:flutter/services.dart';
-//import 'package:universal_io/io.async';
+import 'package:universal_io/io.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -25,25 +25,23 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
      if (image==null) return;
 
      String path = image.path;
-     //final imageTemporary = File(path);
-     //setState(() => this.image = imageTemporary);
+     final imageTemporary = File(path);
+     setState(() => this.image = imageTemporary);
    } on PlatformException catch (e) {
      print("Failed to select image: $e");
    }
   }
-
-
 /*
-  final CarouselSlider autoPlayDemo = CarouselSlider( viewportFraction: 0.9, aspectRatio: 2.0, autoPlay: false, enlargeCenterPage: true,
+  final CarouselSlider autoPlayDemo = CarouselSlider( options: CarouselOptions(viewportFraction: 0.9, aspectRatio: 2.0, autoPlay: false, enlargeCenterPage: true),
     items: imgList.map(
           (child) {
         return Container(
-          margin: EdgeInsets.all(10.0),
+          margin: const EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                borderRadius: BorderRadius.all(const Radius.circular(5.0)),
                 child: image != null ? Image.file(image!,
                   fit: BoxFit.cover,
                   width: 500.0,) : Image.asset(AppBackground.png,
