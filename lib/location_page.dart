@@ -72,24 +72,24 @@ class MapSampleState extends State<MapSample> {
       appBar: AppBar(title: Text('Google Maps')),
       body: Column(
           children:[
-            Row(children: [
-              Expanded(
-                  child: TextFormField(
-                    controller: _searchController,
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(hintText: 'Search by City'),
-                    onChanged: (value){
-                      print(value);
-                    },
-                  )),
-                  IconButton(
-                  onPressed: (){
-                    LocationService().getPlaceId(_searchController.text);
-                  },
-                  icon: Icon(Icons.search),
-                  ),
-                ],
-          ),
+          //   Row(children: [
+          //     Expanded(
+          //         child: TextFormField(
+          //           controller: _searchController,
+          //           textCapitalization: TextCapitalization.words,
+          //           decoration: InputDecoration(hintText: 'Search by City'),
+          //           onChanged: (value){
+          //             print(value);
+          //           },
+          //         )),
+          //         IconButton(
+          //         onPressed: (){
+          //           LocationService().getPlaceId(_searchController.text);
+          //         },
+          //         icon: Icon(Icons.search),
+          //         ),
+          //       ],
+          // ),
       Expanded(
         child: GoogleMap(
           mapType: MapType.normal,
@@ -107,13 +107,29 @@ class MapSampleState extends State<MapSample> {
             _controller.complete(controller);
           },
         ),
-      )],
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: _goToTheLake,
-      //   label: Text('To the lake!'),
-      //   icon: Icon(Icons.directions_boat),
-     // ),
-    ),);
+      ),
+      Container(
+          width: MediaQuery.of(context).size.width/1.3,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(35.0),
+            color: Colors.amber,
+          ),
+          child: MaterialButton(
+            onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => HomePage(title: '_MyHomePageState'),
+              //   ),
+              // );
+            },
+            child: Text('I am Lost'),
+          )
+      )
+          ],
+    ),
+    );
   }
 
   Future<void> _goToTheLake() async {
