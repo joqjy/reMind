@@ -5,7 +5,9 @@ import 'package:reMind/home_view.dart';
 import 'package:reMind/location_page.dart';
 import 'package:reMind/lostAlert.dart';
 import 'package:reMind/photoAlbum.dart';
+import 'package:reMind/profile.dart';
 import 'package:reMind/reminderAlerts.dart';
+import 'package:reMind/reminders.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -99,7 +101,8 @@ class _HomePageState extends State<HomePage> {
                           width: 100,
                           height: 100,
                         ),
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Profile()));},
                       ),
                       SizedBox(height:5),
                       Text(
@@ -171,7 +174,10 @@ class _HomePageState extends State<HomePage> {
                           width: 90,
                           height: 90,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => RemindersPage()));
+                        },
                       ),
                       SizedBox(height:5),
                       Text(

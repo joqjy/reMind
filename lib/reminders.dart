@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MaterialApp(
-    home: Scaffold(
+class RemindersPage extends StatefulWidget {
+  RemindersPage({Key? key}) : super(key: key);
+
+  @override
+  State<RemindersPage> createState() => _RemindersPageState();
+}
+
+class _RemindersPageState extends State<RemindersPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(title: Text("Reminders")),
       body: Center(
         child: Column(
@@ -100,6 +108,6 @@ void main(){
           ],
         ),
       ),
-    ),
-  ));
+    );
+  }
 }
