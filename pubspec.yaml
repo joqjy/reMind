@@ -29,6 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_picker: 0.8.4+10
+  flutter_gen:
+  gallery:
+  flutter_speed_dial:
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,3 +101,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
