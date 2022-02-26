@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     Stream<int> every30seconds =
-        Stream<int>.periodic(Duration(seconds: 30), (t) => t);
+        Stream<int>.periodic(Duration(seconds: 5), (t) => t);
 
     every30seconds.listen((t) {
       showDialog(
