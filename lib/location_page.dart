@@ -21,7 +21,7 @@ class MapSampleState extends State<MapSample> {
 
   static final Marker _kGooglePlexMarker = Marker(
     markerId: MarkerId('_kGooglePlex'),
-    infoWindow: InfoWindow(title: 'Home', snippet: '347 Ang Mo Kio Ave 3, Singapore 560347'),
+    infoWindow: InfoWindow(title: 'Home', snippet: 'Block 347 Ang Mo Kio Ave 3, Singapore 560347'),
     icon: BitmapDescriptor.defaultMarker,
     position: LatLng(1.3673, 103.84858),
   );
