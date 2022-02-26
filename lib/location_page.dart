@@ -84,24 +84,24 @@ class MapSampleState extends State<MapSample> {
       appBar: AppBar(title: Text('Google Maps')),
       body: Column(
           children:[
-            Row(children: [
-              Expanded(
-                  child: TextFormField(
-                    controller: _searchController,
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(hintText: 'Search by City'),
-                    onChanged: (value){
-                      print(value);
-                    },
-                  )),
-                  IconButton(
-                  onPressed: (){
-                    LocationService().getPlaceId(_searchController.text);
-                  },
-                  icon: Icon(Icons.search),
-                  ),
-                ],
-          ),
+          //   Row(children: [
+          //     Expanded(
+          //         child: TextFormField(
+          //           controller: _searchController,
+          //           textCapitalization: TextCapitalization.words,
+          //           decoration: InputDecoration(hintText: 'Search by City'),
+          //           onChanged: (value){
+          //             print(value);
+          //           },
+          //         )),
+          //         IconButton(
+          //         onPressed: (){
+          //           LocationService().getPlaceId(_searchController.text);
+          //         },
+          //         icon: Icon(Icons.search),
+          //         ),
+          //       ],
+          // ),
       Expanded(
         child: GoogleMap(
           mapType: MapType.normal,
