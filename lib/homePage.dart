@@ -39,47 +39,55 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:<Widget>[
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                      side: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      )
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          side: BorderSide(
+                            width: 2,
+                            color: Color.fromARGB(255, 187, 187, 187),
+                          )
+                        ),
+                        padding: EdgeInsets.all(20),
+                      ),
+                      child: Image.asset(
+                        'assets/profile.png',
+                        width:100,
+                        height:100,
+                      ),
+                      onPressed: () {},
                     ),
-                    padding: EdgeInsets.only(top:50, bottom:50, left:30, right:30),
-                  ),
-                  child: Text(
-                    "Details",
-                    style: TextStyle(
-                      fontSize:25,
-                      color: Colors.amber,
-                    ),
-                  ),
-                  onPressed: () {},
+                    Text("Profile"),
+                  ],
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                      side: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      )
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          side: BorderSide(
+                            width: 2,
+                            color: Color.fromARGB(255, 187, 187, 187),
+                          )
+                        ),
+                        padding: EdgeInsets.all(20),
+                      ),
+                      child: Image.asset(
+                        'assets/location.png',
+                        width:100,
+                        height:100,
+                      ),
+                      onPressed: () {},
                     ),
-                    padding: EdgeInsets.only(top:50, bottom:50, left:20, right:20),
-                  ),
-                  child: Text(
-                    "Location",
-                    style: TextStyle(
-                      fontSize:25,
-                      color: Colors.amber,
-                    ),
-                  ),
-                  onPressed: () {},
+                    Text("Location"),
+                  ],
                 ),
               ]
             ),
@@ -87,71 +95,89 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:<Widget>[
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                      side: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      )
-                    ),
-                    padding: EdgeInsets.only(top:50, bottom:50, left:30, right:30),
-                  ),
-                  child: Text(
-                    "Reminders",
-                    style: TextStyle(
-                      fontSize:25,
-                      color: Colors.amber,
-                    ),
-                  ),
-                  onPressed: () {},
-                ),
-                Container(
-                  height:50,
-                  width: 50,
-                  decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32.0),
-                        side: BorderSide(
-                          width: 2,
-                          color: Colors.black,
-                        )
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          side: BorderSide(
+                            width: 2,
+                            color: Color.fromARGB(255, 187, 187, 187),
+                          )
+                        ),
+                        padding: EdgeInsets.all(20),
                       ),
+                      child: Image.asset(
+                        'assets/reminders.png',
+                        width:100,
+                        height:100,
+                      ),
+                      onPressed: () {},
                     ),
-                  child:ElevatedButton(
-                    child: Image.asset('assets/phonebook.png'),
-                    onPressed: () {},
-                  ),
+                    Text(
+                      "Reminders"
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:<Widget>[
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 255, 255, 255),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32.0),
+                          side: BorderSide(
+                            width: 2,
+                            color: Color.fromARGB(255, 187, 187, 187),
+                          )
+                        ),
+                        padding: EdgeInsets.all(20),
+                      ),
+                      child: Image.asset(
+                        'assets/phonebook.png',
+                        width:100,
+                        height:100,
+                      ),
+                      onPressed: () {
+                      },
+                    ),
+                    Text("Phone Book"),
+                  ]
                 ),
               ]
             ),
             SizedBox(height: 30),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
-                  side: BorderSide(
-                    width: 2,
-                    color: Colors.black,
-                  )
-                ),
-                padding: EdgeInsets.only(top:50, bottom:50, left:20, right:20),
-              ),
-              child: Text(
-                "Photo Album",
-                style: TextStyle(
-                  fontSize:25,
-                  color: Colors.amber,
-                ),
-              ),
-              onPressed: () {
-                Navigator.push(context,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget>[
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 255, 255, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0),
+                      side: BorderSide(
+                        width: 2,
+                        color: Color.fromARGB(255, 187, 187, 187),
+                      )
+                    ),
+                    padding: EdgeInsets.all(20),
+                  ),
+                  child: Image.asset(
+                    'assets/photoalbum.png',
+                    width:100,
+                    height:100,
+                  ),
+                  onPressed: () {
+                    Navigator.push(context,
                       MaterialPageRoute(builder: (context) => PhotoAlbum()));
-              },
+                  },
+                ),
+                Text("Photo Album"),
+              ],
             ),
           ]
         )

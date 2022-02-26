@@ -61,6 +61,10 @@ flutter:
     - assets/patient_icon.png
     - assets/caretaker_icon.png
     - assets/phonebook.png
+    - assets/photoalbum.png
+    - assets/reminders.png
+    - assets/location.png
+    - assets/profile.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
