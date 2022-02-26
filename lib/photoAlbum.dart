@@ -25,8 +25,8 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
      if (image==null) return;
 
      String path = image.path;
-     final imageTemporary = File(path);
-     setState(() => this.image = imageTemporary);
+     //final imageTemporary = File(path);
+     //setState(() => this.image = imageTemporary);
    } on PlatformException catch (e) {
      print("Failed to select image: $e");
    }

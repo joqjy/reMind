@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:googlemap/location_service.dart';
+//import 'package:googlemaps/location_service.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,7 +79,7 @@ class MapSampleState extends State<MapSample> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text('Google Maps')),
       body: Column(
           children:[
@@ -118,7 +118,6 @@ class MapSampleState extends State<MapSample> {
             _controller.complete(controller);
           },
         ),
-      child:
       )],
       // floatingActionButton: FloatingActionButton.extended(
       //   onPressed: _goToTheLake,
