@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class LostAlert extends StatelessWidget {
-  String formattedDate = DateFormat().add_jm().format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return AlertDialog(

@@ -18,24 +18,31 @@ class MyAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      insetPadding: EdgeInsets.all(50),
       title: Text(
-        "Reminder!  " + formattedDate,
-        style: TextStyle(fontSize:20)
+        "Reminder! " + formattedDate,
+        style: TextStyle(fontSize:20),
         //style: Theme.of(context).textTheme.title,
       ),
       actions: <Widget>[
         MaterialButton(
           elevation: 5.0,
-          child: Text('OK'),
+          child: Text(
+            'OK',
+            style: TextStyle(fontSize: 20),
+            textAlign: TextAlign.right,
+          ),
           onPressed: () {
             Navigator.of(context).pop();
           },
-        )
+        ),
       ],
-      content: Text(
-        "Eat Medicine!",
-        style: TextStyle(fontSize: 30),
-      ),
+      content: 
+        Text(
+          "Eat Medicine!",
+          style: TextStyle(fontSize: 25),
+          textAlign: TextAlign.center,
+        ),
     );
   }
 }
