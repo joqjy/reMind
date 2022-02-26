@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:reMind/location_page.dart';
 import 'package:reMind/photoAlbum.dart';
 import 'package:reMind/reminderAlerts.dart';
 
@@ -126,7 +127,10 @@ class _HomePageState extends State<HomePage> {
                           width: 100,
                           height: 100,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MapSample()));
+                        },
                       ),
                       Text(
                         "Location",
@@ -226,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                     width: 100,
                     height: 100,
                   ),
-                  onPressed: () {
+                  onPressed: () {              
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => PhotoAlbum()));
                   },
