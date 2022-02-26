@@ -61,51 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: MaterialButton(
-                        onPressed: () {
-                          print('Question: ' + _questionController.text);
-                          print('Answer: ' + _answerController.text);
-                        },
-                        child: Image.asset('assets/patient_icon.png'),
-                      ),
-                    ),
-                    Text("Patient"),
-                  ]),
-              SizedBox(
-                width: 30,
-              ),
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      width: 150,
-                      height: 150,
-                      child: MaterialButton(
-                        onPressed: () {
-                          print('Question: ' + _questionController.text);
-                          print('Answer: ' + _answerController.text);
-                        },
-                        child: Image.asset('assets/caretaker_icon.png'),
-                      ),
-                    ),
-                    Text("Caretaker"),
-                  ]),
-            ]),
             // Container(
             //   //to have fixed width and height for the image
             //   width: 150,
             //   height: 150,
             //   child: Image.asset('assets/notebookIcon.jpg'),
             // ),
+            Text(
+              "Welcome to reMind!",
+              style: TextStyle(fontSize: 30),
+            ),
             Padding(
-              padding: EdgeInsets.only(right: 50, left: 50, top: 20),
+              padding: EdgeInsets.only(right: 50, left: 50, top: 30),
               child: TextFormField(
                 controller: _questionController,
                 style: TextStyle(
@@ -148,15 +115,55 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Container(
-              child: MaterialButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
-                },
-                child: Text("Login"),
+            SizedBox(height: 40),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 125,
+                      height: 125,
+                      child: MaterialButton(
+                        onPressed: () {
+                          if (_questionController.text != '' &&
+                              _answerController.text != '') {
+                            Navigator.push(context, 
+                              MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                          }
+                        },
+                        child: Image.asset('assets/patient_icon.png'),
+                      ),
+                    ),
+                    Text("I am a Patient"),
+                  ]),
+              SizedBox(
+                width: 30,
               ),
-            ),
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 125,
+                      height: 125,
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: Image.asset('assets/caretaker_icon.png'),
+                      ),
+                    ),
+                    Text("I am a Caretaker"),
+                  ]),
+            ]),
+
+            // Container(
+            //   child: MaterialButton(
+            //     onPressed: () {
+            //       Navigator.push(context,
+            //           MaterialPageRoute(builder: (context) => HomePage()));
+            //     },
+            //     child: Text("Login"),
+            //   ),
+            // ),
           ],
         ),
       ),
