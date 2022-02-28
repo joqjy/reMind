@@ -1,2 +1,2 @@
 # reMind
- A simple application for people with Dementia
+ An application for people with Dementia
